@@ -1,0 +1,25 @@
+{
+  "name": "daburger_egomez",
+  "version": "1.0.0",
+  "description": "daBurger Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egome019/daBurger_egomez.git"
+  },
+  "author": "Erik Gomez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egome019/daBurger_egomez/issues"
+  },
+  "homepage": "https://github.com/egome019/daBurger_egomez#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
