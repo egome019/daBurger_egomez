@@ -3,7 +3,7 @@ const connection = require("../config/connection.js");
 
 // two functions that are helper code
 function printQuestionMarks(num) {
-    const arr = [];
+    var arr = [];
     for (let i = 0; i < num; i++) {
         arr.push("?");
     }
@@ -11,9 +11,9 @@ function printQuestionMarks(num) {
 }
 
 function objToSql(object) {
-    const arr = [];
+    var arr = [];
     for (const key in object) {
-        const value = object[key];
+        var value = object[key];
         if (object.hasOwnProperty(object, key)) {
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
@@ -28,14 +28,14 @@ function objToSql(object) {
 
 const orm = {
     selectAll: function (tableInput, cb) {
-        const query = "SELECT * FROM " + tableInput + ";";
+        var query = "SELECT * FROM " + tableInput + ";";
         connection.query(query, function(err, res) {
             if (err) throw err;
             cb(res);
         });
     },
     insertOne: function (table, cols, vals, cb) {
-        const query = "INSERT INTO " + table;
+        var query = "INSERT INTO " + table;
         query += " (";
         query += cols.toString();
         query += ") ";
@@ -51,7 +51,7 @@ const orm = {
         });
     },
     updateOne: function (table, objColVals, condition, cb) {
-        const query = "UPDATE " + table;
+        var query = "UPDATE " + table;
         query += " SET ";
         query += objToSql(objColVals);
         query += " WHERE ";
