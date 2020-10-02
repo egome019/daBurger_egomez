@@ -22,18 +22,18 @@ router.post("/api/burgers", function(req, res){
     burger.insertOne([
         "burger_name", "devoured"
     ], [
-        req.body.name, false
+        req.body.name
     ], function(result){
         res.json({ id: result.insertId});
     });
 });
 
 // put route
-router.post("/api/burgers/:id", function(req, res){
-    const condition = "id = " + req.params.id;
+router.put("/api/burgers/:id", function(req, res){
+    var condition = "id = " + req.params.id;
     console.log("condition", condition);
     const burgObject = {
-        devoured: true
+        devoured: req.body.devoured
     }
     burger.updateOne(burgObject, condition, function(res){
         if (res.changedRows == 0) {
