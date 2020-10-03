@@ -1,5 +1,6 @@
-<li>
-    {{burger_name}}
-
-    {{#if devoured}} <button class="devouredOrNot" data-id="{{id}}" data-devoured="{{devoured}}">DEVOUR!</button> {{else}}That was great!{{/if}}
+<li class="list-group-item">
+    <p class="col">{{burger_name}}</p>
+    <div>
+        {{#if devoured}} <button class="devouredOrNot btn btn-secondary" data-id="{{this.id}}" data-devour="{{this.devoured}}">DEVOUR!</button> {{else}}<p class= "col" data-devour="{{devoured}}">That was great!</p>{{/if}}
+    </div>
 </li>

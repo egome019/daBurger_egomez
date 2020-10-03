@@ -1,15 +1,10 @@
 $(function(){
     $(".devouredOrNot").on("click", function(event){
         const id = $(this).data("id");
-        const devoured = $(this).data("devoured");
-        const freshlyDevoured = {
-            devoured: devoured
-        };
-
         // put request
-        $.ajax("/api/burgers" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: freshlyDevoured
+            data: {devoured: true}
         }).then(function(){
             console.log("Burger has been ", devoured);
             location.reload();
