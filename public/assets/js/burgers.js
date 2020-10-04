@@ -6,7 +6,7 @@ $(function(){
             type: "PUT",
             data: {devoured: true}
         }).then(function(){
-            console.log("Burger has been ", devoured);
+            console.log("Burger has been devoured");
             location.reload();
         });
     });
