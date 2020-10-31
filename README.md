@@ -19,6 +19,8 @@
   -[Tests](#tests)
 
   -[Questions](#questions)
+  
+  -[Demonstration](#demonstration)
 
   ## Installation
 
